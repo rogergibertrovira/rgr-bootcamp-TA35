@@ -15,6 +15,7 @@
           class="form-control-sm"
           id="nombre"
           placeholder="Nombre"
+          [(ngModel)]="nombre"
         />
       </div>
     </div>
@@ -25,7 +26,13 @@
     </div>
     <div class="col-4">
       <div class="form-group">
-        <input type="text" class="form-control-sm" id="cif" placeholder="CIF" />
+        <input
+          type="text"
+          class="form-control-sm"
+          id="cif"
+          placeholder="CIF"
+          [(ngModel)]="cif"
+        />
       </div>
     </div>
   </div>
@@ -40,6 +47,7 @@
           class="form-control-sm"
           id="direccion"
           placeholder="Dirección"
+          [(ngModel)]="direccion"
         />
       </div>
     </div>
@@ -50,18 +58,17 @@
     </div>
     <div class="col-4">
       <div class="input-group">
-        <select class="custom-select" id="grupo">
-          <option selected>Elige grupo...</option>
-          <option value="1">Grupo 1</option>
-          <option value="2">Grupo 2</option>
-          <option value="3">Grupo 3</option>
+        <select class="custom-select" id="grupo" [(ngModel)]="grupo">
+          <option value="Grupo 1">Grupo 1</option>
+          <option value="Grupo 2">Grupo 2</option>
+          <option value="Grupo 3">Grupo 3</option>
         </select>
       </div>
     </div>
   </div>
   <div class="row justify-content-center row1">
     <div class="col-6">
-      <button class="btn btn-primary">Guardar</button>
+      <button class="btn btn-primary" (click)="anadirCliente()">Guardar</button>
     </div>
   </div>
 </div>

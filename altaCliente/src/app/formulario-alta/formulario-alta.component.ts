@@ -19,6 +19,11 @@ export class FormularioAltaComponent {
   ngOnInit(): void {}
 
   anadirCliente() {
-    this.datos.push({nombre: this.nombre, cif: this.cif, direccion: this.direccion, grupo: this.grupo})
+    this.datos.push({
+      nombre: this.nombre,
+      cif: this.cif,
+      direccion: this.direccion,
+      grupo: this.grupo,
+    });
   }
 }

@@ -1,12 +1,11 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.css'],
 })
-export class FormularioComponent {
+export class FormularioComponent implements OnInit{
   @Input() datos: any;
   nombre = '';
   email = '';
@@ -14,18 +13,16 @@ export class FormularioComponent {
   operacion = '';
   operacionResultado = '5';
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {}
 
   enviarFormulario() {
     if (this.operacion == this.operacionResultado) {
-      this.router.navigate(['/respuesta']);
-      // this.datos.push({
-      //   nombre: this.nombre,
-      //   email: this.email,
-      //   mensaje: this.mensaje,
-      // });
+      this.datos.nombre = this.nombre;
+      this.datos.email = this.email;
+      this.datos.mensaje = this.mensaje;
+      this.datos.enviado = true;
     }
   }
 }

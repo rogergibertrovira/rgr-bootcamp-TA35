@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,11 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'formularioContacto';
-  respuestas = [
-    {
-      nombre: '',
-      email: '',
-      mensaje: '',
-    },
-  ];
+  respuesta = { nombre: '', email: '', mensaje: '', enviado: false };
 }
